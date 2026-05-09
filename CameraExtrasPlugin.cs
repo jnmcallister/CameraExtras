@@ -1,4 +1,6 @@
 using BepInEx;
+using System;
+using UnityEngine;
 
 namespace CameraExtras;
 
@@ -10,5 +12,21 @@ public partial class CameraExtrasPlugin : BaseUnityPlugin
     {
         // Put your initialization logic here
         Logger.LogInfo($"Plugin {Name} ({Id}) has loaded!");
+
+        Configuration.Init(Config);
+    }
+
+    void Update()
+    {
+        HandleInput();
+    }
+
+    private void HandleInput()
+    {
+        // Check inputs
+        if (InputHelper.FreezeCameraDown)
+        {
+            Logger.LogInfo("Freeze camera button pressed");
+        }
     }
 }
