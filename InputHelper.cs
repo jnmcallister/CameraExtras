@@ -5,4 +5,5 @@ using UnityEngine;
 internal static class InputHelper
 {
     public static bool FreezeCameraDown => Input.GetKeyDown(Configuration.FreezeCamera);
+    public static bool HideUIDown => Input.GetKeyDown(Configuration.HideUI);
 }
