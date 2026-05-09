@@ -14,7 +14,7 @@ internal static class Configuration
     public static void Init(ConfigFile config)
     {
         // Keybinds
-        _freezeCamera = config.Bind("Keybinds", "Freeze Camera", KeyCode.L);
-        _hideUI = config.Bind("Keybinds", "Hide UI", KeyCode.K);
+        _freezeCamera = config.Bind("Keybinds", "Freeze Camera", KeyCode.B);
+        _hideUI = config.Bind("Keybinds", "Hide UI", KeyCode.L);
     }
 }
