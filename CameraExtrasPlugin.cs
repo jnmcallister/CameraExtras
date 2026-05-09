@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace CameraExtras;
 
-// TODO - adjust the plugin guid as needed
 [BepInAutoPlugin(id: "io.github.foxyrobo.cameraextras")]
 public partial class CameraExtrasPlugin : BaseUnityPlugin
 {
