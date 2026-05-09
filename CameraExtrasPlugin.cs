@@ -7,9 +7,6 @@ namespace CameraExtras;
 [BepInAutoPlugin(id: "io.github.foxyrobo.cameraextras")]
 public partial class CameraExtrasPlugin : BaseUnityPlugin
 {
-    bool cameraFrozen = false;
-    bool uiHidden = false;
-
     CameraController cameraController;
     HUDCamera hudCamera;
     Camera uiCamera; // Component on hudCamera gameObject
@@ -73,11 +70,10 @@ public partial class CameraExtrasPlugin : BaseUnityPlugin
         }
 
         // Toggle freezing/unfreezing camera controller
-        if (cameraFrozen)
-            cameraController.FreezeInPlace();
-        else
+        if (cameraController.mode == CameraController.CameraMode.FROZEN)
             cameraController.StopFreeze();
-        cameraFrozen = !cameraFrozen;
+        else
+            cameraController.FreezeInPlace();
     }
 
     public void ToggleHideUI()
@@ -119,7 +115,6 @@ public partial class CameraExtrasPlugin : BaseUnityPlugin
         }
 
         // Toggle hiding/unhiding UI
-        uiHidden = !uiHidden;
-        uiCamera.enabled = !uiHidden;
+        uiCamera.enabled = !uiCamera.enabled;
     }
 }
